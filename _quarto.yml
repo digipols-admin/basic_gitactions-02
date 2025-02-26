@@ -16,6 +16,8 @@ website:
         text: Plots
       - href: tab-tables/index.qmd
         text: Tables
+      - href: shinylive.qmd
+        text: ShinyLive
     logo: images/uzh.png
 
 format:
@@ -26,5 +28,7 @@ format:
     css: styles.css
     toc: true
 
+filters:
+  - shinylive
 
 
