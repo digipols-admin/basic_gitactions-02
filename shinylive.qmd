@@ -1,5 +1,5 @@
 ---
-title: "Shinylive Example"
+title: "Shinylive Example 02"
 format: html
 ---
 
