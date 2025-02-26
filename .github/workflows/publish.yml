@@ -45,7 +45,13 @@ jobs:
         uses: r-lib/actions/setup-renv@v2
         with:
           cache-version: 1
-
+          
+      - name: Install shinylive package explicitly
+        run: |
+          Rscript -e 'install.packages("remotes")'
+          Rscript -e 'remotes::install_github("posit-dev/r-shinylive", dependencies = FALSE)'
+        shell: bash  
+          
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
