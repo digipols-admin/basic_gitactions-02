@@ -34,7 +34,7 @@ jobs:
 
       - name: Install Quarto Extensions
         run: |
-         quarto add quarto-ext/shinylive
+         quarto add --no-prompt quarto-ext/shinylive
       
       - name: Install R
         uses: r-lib/actions/setup-r@v2
