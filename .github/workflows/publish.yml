@@ -48,8 +48,11 @@ jobs:
           
       - name: Install shinylive package explicitly
         run: |
-          Rscript -e 'install.packages("remotes")'
-          Rscript -e 'remotes::install_github("posit-dev/r-shinylive", dependencies = FALSE)'
+          # Install from a Tarball to avoid Authentication issues
+          mkdir -p /tmp/r-packages
+          cd /tmp/r-packages
+          curl -L -o r-shinylive.tar.gz https://github.com/posit-dev/r-shinylive/archive/refs/heads/main.tar.gz
+          R CMD INSTALL r-shinylive.tar.gz
         shell: bash  
           
       - name: Render and Publish
